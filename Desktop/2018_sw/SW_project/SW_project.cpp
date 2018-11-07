@@ -7,7 +7,7 @@ int main(int argc, char *argv[]){
 
     QWidget window;
     
-    window.resize(250,150);
+    window.resize(250,350);
     window.setWindowTitle("Simple example");
     window.show();
    
