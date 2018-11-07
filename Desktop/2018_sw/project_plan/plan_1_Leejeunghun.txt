@@ -1,0 +1,3 @@
+Planning is a genius game development.
+
+There are some interesting elements such as a minus auction or a combination game during the game, and I really wanted to make it a GUI, but I will try this opportunity.
