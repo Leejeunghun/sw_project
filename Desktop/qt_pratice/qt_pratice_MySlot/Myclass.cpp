@@ -1,5 +1,12 @@
 #include <QApplication>
 #include <QPushButton>
+#include<unistd.h>
+#include <iostream>
+
+#include <fstream>
+
+using namespace std;
+
 class MyClass: public QWidget
 {
   public:
@@ -8,8 +15,15 @@ class MyClass: public QWidget
 
 MyClass::MyClass()
 {
+    ofstream output("output.txt");
+
+    output << "test" << endl;
+
+    output.close();
     QPushButton *quit=new QPushButton("Quit",this);
     quit->resize(75,35);
+    
+
     QObject::connect(quit,SIGNAL(clicked()),qApp,SLOT(quit()));
 }
 
