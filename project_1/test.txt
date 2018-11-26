@@ -1,2 +1,1 @@
-Hello World!
-This is C++ File Contents.
+34

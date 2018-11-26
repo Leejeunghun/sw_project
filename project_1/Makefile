@@ -224,6 +224,7 @@ DIST          = ../Qt/5.11.2/gcc_64/mkspecs/features/spec_pre.prf \
 		../Qt/5.11.2/gcc_64/mkspecs/features/qt_config.prf \
 		../Qt/5.11.2/gcc_64/mkspecs/linux-g++/qmake.conf \
 		../Qt/5.11.2/gcc_64/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		../Qt/5.11.2/gcc_64/mkspecs/features/exclusive_builds.prf \
 		../Qt/5.11.2/gcc_64/mkspecs/features/toolchain.prf \
 		../Qt/5.11.2/gcc_64/mkspecs/features/default_pre.prf \
@@ -424,6 +425,7 @@ Makefile: project_1.pro ../Qt/5.11.2/gcc_64/mkspecs/linux-g++/qmake.conf ../Qt/5
 		../Qt/5.11.2/gcc_64/mkspecs/features/qt_config.prf \
 		../Qt/5.11.2/gcc_64/mkspecs/linux-g++/qmake.conf \
 		../Qt/5.11.2/gcc_64/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		../Qt/5.11.2/gcc_64/mkspecs/features/exclusive_builds.prf \
 		../Qt/5.11.2/gcc_64/mkspecs/features/toolchain.prf \
 		../Qt/5.11.2/gcc_64/mkspecs/features/default_pre.prf \
@@ -616,6 +618,7 @@ Makefile: project_1.pro ../Qt/5.11.2/gcc_64/mkspecs/linux-g++/qmake.conf ../Qt/5
 ../Qt/5.11.2/gcc_64/mkspecs/features/qt_config.prf:
 ../Qt/5.11.2/gcc_64/mkspecs/linux-g++/qmake.conf:
 ../Qt/5.11.2/gcc_64/mkspecs/features/spec_post.prf:
+.qmake.stash:
 ../Qt/5.11.2/gcc_64/mkspecs/features/exclusive_builds.prf:
 ../Qt/5.11.2/gcc_64/mkspecs/features/toolchain.prf:
 ../Qt/5.11.2/gcc_64/mkspecs/features/default_pre.prf:
@@ -1074,7 +1077,18 @@ dialog.o: dialog.cpp dialog.h \
 		../Qt/5.11.2/gcc_64/include/QtWidgets/qabstractbutton.h \
 		../Qt/5.11.2/gcc_64/include/QtCore/QFile \
 		../Qt/5.11.2/gcc_64/include/QtCore/QTextStream \
-		ui_dialog.h
+		ui_dialog.h \
+		../Qt/5.11.2/gcc_64/include/QtCore/QVariant \
+		../Qt/5.11.2/gcc_64/include/QtWidgets/QMenuBar \
+		../Qt/5.11.2/gcc_64/include/QtWidgets/qmenubar.h \
+		../Qt/5.11.2/gcc_64/include/QtWidgets/qmenu.h \
+		../Qt/5.11.2/gcc_64/include/QtWidgets/qaction.h \
+		../Qt/5.11.2/gcc_64/include/QtWidgets/qactiongroup.h \
+		../Qt/5.11.2/gcc_64/include/QtWidgets/QStatusBar \
+		../Qt/5.11.2/gcc_64/include/QtWidgets/qstatusbar.h \
+		../Qt/5.11.2/gcc_64/include/QtWidgets/QToolBar \
+		../Qt/5.11.2/gcc_64/include/QtWidgets/qtoolbar.h \
+		../Qt/5.11.2/gcc_64/include/QtWidgets/QWidget
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o dialog.o dialog.cpp
 
 moc_dialog.o: moc_dialog.cpp 

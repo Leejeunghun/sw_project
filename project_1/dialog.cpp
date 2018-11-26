@@ -3,6 +3,7 @@
 #include <fstream>
 #include <iostream>
 using namespace std;
+int t=0;
 Dialog::Dialog(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::Dialog)
@@ -16,27 +17,26 @@ Dialog::~Dialog()
 }
 
 void Dialog::example() {
-
 }
+
 void Dialog::on_pushButton_clicked()
 {
-   connect (this, SIGNAL(clicked()), this, SIGNAL(clicked()));
-   string filePath = "test.txt";
-       // write File
-       ofstream writeFile(filePath.data());
-       if( writeFile.is_open() ){
-           writeFile << "Hello World!\n";
-           writeFile << "This is C++ File Contents.\n";
-           writeFile.close();
-       }
+     t=t+1;
+     string filePath = "test.txt";
+     // read File
+     ifstream openFile(filePath.data());
+     if( openFile.is_open() ){
+         string line;
+         while(getline(openFile, line)){
+             cout << line << endl;
+         }
+         openFile.close();
+     }
+     // write File
+         ofstream writeFile(filePath.data());
+         if( writeFile.is_open() ){
+             writeFile <<t<<endl;
+             writeFile.close();
+     }
 
-       // read File
-       ifstream openFile(filePath.data());
-       if( openFile.is_open() ){
-           string line;
-           while(getline(openFile, line)){
-               cout << line << endl;
-           }
-           openFile.close();
-       }
 }
