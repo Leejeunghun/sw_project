@@ -14,9 +14,9 @@ We make simple up down buttoon and display.
 *************************************************************
 ![screenshot](./1127_GUI.PNG)
 
-push raise is up betting coin
-push down is down betting coin
-push commit make oppent card
-ps) IT IS NOT COMPLETE 
+push raise is up betting coin.
+push down is down betting coin.
+push commit make oppent card.
+ps) IT IS NOT COMPLETE .
 
 ***********************************************************
