@@ -1,2 +1,3 @@
 Let's learn how to make server
 linux server guide
+I'll use NFS server to send data
