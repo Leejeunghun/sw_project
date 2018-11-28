@@ -1,4 +1,0 @@
-hello .  oneline
-hello two line
-
-final line
