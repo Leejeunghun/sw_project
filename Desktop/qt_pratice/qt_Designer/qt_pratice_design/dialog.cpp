@@ -1,6 +1,9 @@
 #include "dialog.h"
 #include "ui_dialog.h"
+#define MAX_SIZE 1000
 
+char inputString[MAX_SIZE];
+using namespace std;
 Dialog::Dialog(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Dialog)
@@ -12,32 +15,31 @@ Dialog::~Dialog()
 {
     delete ui;
 }
+void handlebutton(void)
+{
+    int t=0;
+    ofstream outFile("output.txt");
+         for(int i = 0 ; i < 10 ; i++){
+                 outFile << i << endl;
+         }
+         outFile.close();
+         t=t+1;
+         ifstream inFile("output.txt");
+         while(!inFile.eof()){
+                 inFile.getline(inputString, 100);
+                 cout << t << endl;
+         }
+         inFile.close();
+    return ;
+}
+
 
 void Dialog::on_pushButton_clicked()
 {
-    int t=0;
-    {
-        QString filename = "Data.txt";
-        QFile file(filename);
-        if (file.open(QIODevice::ReadWrite))
-        {
-             QTextStream stream(&file);
-             stream << t << endl;
-             stream.flush();
-        }
-    }
+    connect(this,SIGNAL(on_pushButton_clicked()),this,SLOT(handlebutton));
+    return ;
 }
 
 
-void Dialog::on_spinBox_editingFinished()
-{
-
-}
-
-void Dialog::on_textEdit_2_textChanged()
-{
-
-
-}
 
 

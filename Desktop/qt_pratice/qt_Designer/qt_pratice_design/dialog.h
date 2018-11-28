@@ -4,7 +4,8 @@
 #include <QDialog>
 #include <QFile>
 #include <QTextStream>
-
+#include <fstream>
+#include <iostream>
 namespace Ui {
 class Dialog;
 }
@@ -28,8 +29,12 @@ private slots:
 
     void on_spinBox_valueChanged(int arg1);
 
+    void on_pushButton_2_clicked();
+
 private:
     Ui::Dialog *ui;
+private slots:
+    void handlebutton(void) ;
 };
 
 #endif // DIALOG_H

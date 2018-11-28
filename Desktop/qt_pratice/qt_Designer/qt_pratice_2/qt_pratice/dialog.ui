@@ -30,13 +30,6 @@
       </property>
      </widget>
     </item>
-    <item row="2" column="2">
-     <widget class="QPushButton" name="pushButton_3">
-      <property name="text">
-       <string>commit</string>
-      </property>
-     </widget>
-    </item>
     <item row="2" column="1">
      <widget class="QPushButton" name="pushButton_2">
       <property name="text">
@@ -44,9 +37,16 @@
       </property>
      </widget>
     </item>
+    <item row="2" column="2">
+     <widget class="QPushButton" name="pushButton_3">
+      <property name="text">
+       <string>commit</string>
+      </property>
+     </widget>
+    </item>
    </layout>
   </widget>
-  <widget class="QLCDNumber" name="lcdNumber">
+  <widget class="QLCDNumber" name="lcdNumber_1">
    <property name="geometry">
     <rect>
      <x>70</x>
@@ -54,6 +54,29 @@
      <width>111</width>
      <height>101</height>
     </rect>
+   </property>
+  </widget>
+  <widget class="QLCDNumber" name="lcdNumber_2">
+   <property name="geometry">
+    <rect>
+     <x>253</x>
+     <y>122</y>
+     <width>111</width>
+     <height>101</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>56</x>
+     <y>0</y>
+     <width>411</width>
+     <height>121</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>first is coin second is oppent card</string>
    </property>
   </widget>
  </widget>

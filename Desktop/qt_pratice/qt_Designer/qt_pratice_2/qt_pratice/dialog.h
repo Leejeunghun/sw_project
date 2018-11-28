@@ -10,6 +10,10 @@
 #include <QFile>
 #include <QTextStream>
 #include <fstream>
+#include <cstdlib>
+#include <QMessageBox>
+using namespace std;
+using namespace std;
 
 namespace Ui {
 class Dialog;
@@ -27,6 +31,9 @@ private slots:
     void on_pushButton_1_clicked();
 
     void on_pushButton_2_clicked();
+
+    void on_pushButton_3_clicked();
+
 
 private:
     Ui::Dialog *ui;

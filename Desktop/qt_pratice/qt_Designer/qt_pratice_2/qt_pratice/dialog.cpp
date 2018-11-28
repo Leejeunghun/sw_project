@@ -1,12 +1,15 @@
 #include "dialog.h"
 #include "ui_dialog.h"
-using namespace std;
+
 int t=0;
+int PLAYER_COIN_1=20;
 Dialog::Dialog(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Dialog)
 {
     ui->setupUi(this);
+
+
 }
 
 Dialog::~Dialog()
@@ -16,7 +19,16 @@ Dialog::~Dialog()
 
 void Dialog::on_pushButton_1_clicked()
 {
-    t=t+1;
+    if(PLAYER_COIN_1 >t)
+    {
+       t=t+1;
+    }
+    else
+    {
+        QMessageBox::information(this,"Error","NO COIN to BET","OK");
+        return;
+    }
+
     string filePath = "test.txt";
     // write File
         ofstream writeFile(filePath.data());
@@ -24,12 +36,21 @@ void Dialog::on_pushButton_1_clicked()
             writeFile <<t<<endl;
             writeFile.close();
     }
-   ui->lcdNumber->display(t);
+   ui->lcdNumber_1->display(t);
 }
 
 void Dialog::on_pushButton_2_clicked()
 {
-    t=t-1;
+
+    if(t >0)  //not using  //change
+    {
+       t=t-1;
+    }
+    else
+    {
+        QMessageBox::information(this,"Error","DO not betting minus","OK");
+        return;
+    }
     string filePath = "test.txt";
     // write File
         ofstream writeFile(filePath.data());
@@ -37,6 +58,22 @@ void Dialog::on_pushButton_2_clicked()
             writeFile <<t<<endl;
             writeFile.close();
     }
-   ui->lcdNumber->display(t);
+   ui->lcdNumber_1->display(t);
 
 }
+
+void Dialog::on_pushButton_3_clicked()
+{
+    int k=0;
+    k=rand()%10+1;
+    string filePath = "oppent.txt";
+    // write File
+        ofstream writeFile(filePath.data());
+        if( writeFile.is_open() ){
+            writeFile <<k<<endl;
+            writeFile.close();
+    }
+   ui->lcdNumber_2->display(k);
+}
+
+

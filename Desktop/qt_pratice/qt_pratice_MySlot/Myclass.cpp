@@ -24,12 +24,13 @@ MyClass::MyClass()
     quit->resize(75,35);
     
 
-    QObject::connect(quit,SIGNAL(clicked()),qApp,SLOT(quit()));
+    
 }
 
 int main(int argc,char **argv)
 {
     QApplication app(argc,argv);
+    
     MyClass *quit=new MyClass();
     quit->show();
     return app.exec();

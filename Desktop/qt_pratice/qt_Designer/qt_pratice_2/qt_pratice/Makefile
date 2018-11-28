@@ -224,6 +224,7 @@ DIST          = /home/lee/Qt/5.11.2/gcc_64/mkspecs/features/spec_pre.prf \
 		/home/lee/Qt/5.11.2/gcc_64/mkspecs/features/qt_config.prf \
 		/home/lee/Qt/5.11.2/gcc_64/mkspecs/linux-g++/qmake.conf \
 		/home/lee/Qt/5.11.2/gcc_64/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		/home/lee/Qt/5.11.2/gcc_64/mkspecs/features/exclusive_builds.prf \
 		/home/lee/Qt/5.11.2/gcc_64/mkspecs/features/toolchain.prf \
 		/home/lee/Qt/5.11.2/gcc_64/mkspecs/features/default_pre.prf \
@@ -424,6 +425,7 @@ Makefile: qt_pratice.pro /home/lee/Qt/5.11.2/gcc_64/mkspecs/linux-g++/qmake.conf
 		/home/lee/Qt/5.11.2/gcc_64/mkspecs/features/qt_config.prf \
 		/home/lee/Qt/5.11.2/gcc_64/mkspecs/linux-g++/qmake.conf \
 		/home/lee/Qt/5.11.2/gcc_64/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		/home/lee/Qt/5.11.2/gcc_64/mkspecs/features/exclusive_builds.prf \
 		/home/lee/Qt/5.11.2/gcc_64/mkspecs/features/toolchain.prf \
 		/home/lee/Qt/5.11.2/gcc_64/mkspecs/features/default_pre.prf \
@@ -616,6 +618,7 @@ Makefile: qt_pratice.pro /home/lee/Qt/5.11.2/gcc_64/mkspecs/linux-g++/qmake.conf
 /home/lee/Qt/5.11.2/gcc_64/mkspecs/features/qt_config.prf:
 /home/lee/Qt/5.11.2/gcc_64/mkspecs/linux-g++/qmake.conf:
 /home/lee/Qt/5.11.2/gcc_64/mkspecs/features/spec_post.prf:
+.qmake.stash:
 /home/lee/Qt/5.11.2/gcc_64/mkspecs/features/exclusive_builds.prf:
 /home/lee/Qt/5.11.2/gcc_64/mkspecs/features/toolchain.prf:
 /home/lee/Qt/5.11.2/gcc_64/mkspecs/features/default_pre.prf:
@@ -810,6 +813,8 @@ moc_dialog.cpp: /home/lee/Qt/5.11.2/gcc_64/include/QtWidgets/QDialog \
 		/home/lee/Qt/5.11.2/gcc_64/include/QtWidgets/qabstractbutton.h \
 		/home/lee/Qt/5.11.2/gcc_64/include/QtCore/QFile \
 		/home/lee/Qt/5.11.2/gcc_64/include/QtCore/QTextStream \
+		/home/lee/Qt/5.11.2/gcc_64/include/QtWidgets/QMessageBox \
+		/home/lee/Qt/5.11.2/gcc_64/include/QtWidgets/qmessagebox.h \
 		dialog.h \
 		moc_predefs.h \
 		/home/lee/Qt/5.11.2/gcc_64/bin/moc
@@ -956,7 +961,9 @@ main.o: main.cpp dialog.h \
 		/home/lee/Qt/5.11.2/gcc_64/include/QtWidgets/qpushbutton.h \
 		/home/lee/Qt/5.11.2/gcc_64/include/QtWidgets/qabstractbutton.h \
 		/home/lee/Qt/5.11.2/gcc_64/include/QtCore/QFile \
-		/home/lee/Qt/5.11.2/gcc_64/include/QtCore/QTextStream
+		/home/lee/Qt/5.11.2/gcc_64/include/QtCore/QTextStream \
+		/home/lee/Qt/5.11.2/gcc_64/include/QtWidgets/QMessageBox \
+		/home/lee/Qt/5.11.2/gcc_64/include/QtWidgets/qmessagebox.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o main.cpp
 
 dialog.o: dialog.cpp dialog.h \
@@ -1080,7 +1087,21 @@ dialog.o: dialog.cpp dialog.h \
 		/home/lee/Qt/5.11.2/gcc_64/include/QtWidgets/qabstractbutton.h \
 		/home/lee/Qt/5.11.2/gcc_64/include/QtCore/QFile \
 		/home/lee/Qt/5.11.2/gcc_64/include/QtCore/QTextStream \
-		ui_dialog.h
+		/home/lee/Qt/5.11.2/gcc_64/include/QtWidgets/QMessageBox \
+		/home/lee/Qt/5.11.2/gcc_64/include/QtWidgets/qmessagebox.h \
+		ui_dialog.h \
+		/home/lee/Qt/5.11.2/gcc_64/include/QtCore/QVariant \
+		/home/lee/Qt/5.11.2/gcc_64/include/QtWidgets/QGridLayout \
+		/home/lee/Qt/5.11.2/gcc_64/include/QtWidgets/qgridlayout.h \
+		/home/lee/Qt/5.11.2/gcc_64/include/QtWidgets/qlayout.h \
+		/home/lee/Qt/5.11.2/gcc_64/include/QtWidgets/qlayoutitem.h \
+		/home/lee/Qt/5.11.2/gcc_64/include/QtWidgets/qboxlayout.h \
+		/home/lee/Qt/5.11.2/gcc_64/include/QtWidgets/QLCDNumber \
+		/home/lee/Qt/5.11.2/gcc_64/include/QtWidgets/qlcdnumber.h \
+		/home/lee/Qt/5.11.2/gcc_64/include/QtWidgets/qframe.h \
+		/home/lee/Qt/5.11.2/gcc_64/include/QtWidgets/QLabel \
+		/home/lee/Qt/5.11.2/gcc_64/include/QtWidgets/qlabel.h \
+		/home/lee/Qt/5.11.2/gcc_64/include/QtWidgets/QWidget
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o dialog.o dialog.cpp
 
 moc_dialog.o: moc_dialog.cpp 
