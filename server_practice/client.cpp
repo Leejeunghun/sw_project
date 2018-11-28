@@ -1,143 +1,59 @@
-#include "stdafx.h"
-
-#include <stdio.h>
-
-#include <stdlib.h>
-
-#include <winsock2.h>
-
-void ErrorHandling(char* message);
-
-
-
-struct socketStruct {
-
-   int nrData;
-
-   double data[100];
-
-};
-
-
-
-int _tmain(int argc, _TCHAR* argv[])
-
+*
+daytime 클라이언트 프로그램이 실행되기 위해서는
+서버쪽에서 xinetd의 daytime이 구동하고 있어야한다.
+coder YoWu
+*/
+ 
+#include "stdio.h"
+#include "sys/types.h"
+#include "sys/socket.h"
+#include "netinet/in.h"
+ 
+#define BUF_LEN 128
+ 
+void main(int argc, char *argv[])
 {
-
-	WSADATA wsaData;
-
-	SOCKET hSocket;
-
-	SOCKADDR_IN servAddr;
-
-
-
-	// char*를 받은 후에 원하는 형태로 type cast를 한다. 
-
-	char message[500];
-
-	socketStruct* RxData;
-
-	int strLen;
-
-	
-
-	if(WSAStartup(MAKEWORD(2, 2), &wsaData) !=0)
-
-		ErrorHandling("WSAStartup() errer!");
-
-
-
-	hSocket=socket(PF_INET, SOCK_STREAM, 0);
-
-	if(hSocket==INVALID_SOCKET)
-
-		ErrorHandling("hSocketet() error!");
-
-
-
-	memset(&servAddr, 0, sizeof(servAddr));
-
-	servAddr.sin_family=AF_INET;
-
-	servAddr.sin_addr.s_addr=inet_addr("127.0.0.1");
-
-	servAddr.sin_port=htons(1234);
-
-
-
-	if(connect(hSocket, (SOCKADDR*)&servAddr, sizeof(servAddr))==SOCKET_ERROR)
-
-		ErrorHandling("connect() error!");
-
-
-
-	while(1)
-
-	{
-
-		Sleep(10);
-
-		strLen = recv(hSocket, message, sizeof(message)-1, 0);
-
-		if(strLen == 0)
-
-		{
-
-			continue;
-
-		}
-
-		// 받은 것을 형 변환으로 원하는 값으로 바꾼다. 
-
-		message[strLen] = '\0';
-
-		RxData = (socketStruct*)message;
-
-		if(strLen == -1)
-
-			ErrorHandling("read() error!");
-
-		
-
-		int nrData = RxData->nrData;
-
-		// 받은 데이터의 nrData = 0이면 종료한다. 
-
-		if(nrData == 0)
-
-			break;
-
-		for(int i = 0; i < nrData; i++)
-
-			printf("Message from server:[%d] %.1f \n", i, RxData->data[i]);
-
-	}
-
-	// 소켓 종료 
-
-	printf("Closing Socket \n");
-
-	closesocket(hSocket);
-
-	WSACleanup();
-
-	return 0;
-
-
-
-}
-
-
-
-void ErrorHandling(char* message)
-
-{
-
-	fputs(message, stderr);
-
-	fputc('\n', stderr);
-
-	exit(1);
-
+        int s, n;
+        char *haddr;
+        struct sockaddr_in server_addr;
+        //struct sockaddr_in server_addr : 서버의 소켓주소 구조체
+        char buf[BUF_LEN+1];
+ 
+        if(argc != 2)
+        {
+                printf("usage : %s ip_Address\n", argv[0]);
+                exit(0);
+        }
+        haddr = argv[1];
+ 
+        if((s = socket(PF_INET, SOCK_STREAM, 0)) < 0)
+        {//소켓 생성과 동시에 소켓 생성 유효검사
+                printf("can't create socket\n");
+                exit(0);
+        }
+ 
+        bzero((char *)&server_addr, sizeof(server_addr));
+        //서버의 소켓주소 구조체 server_addr을 NULL로 초기화
+ 
+        server_addr.sin_family = AF_INET;
+        //주소 체계를 AF_INET 로 선택
+        server_addr.sin_addr.s_addr = inet_addr(argv[1]);
+        //32비트의 IP주소로 변환
+        server_addr.sin_port = htons(13);
+        //daytime 서비스 포트 번호
+ 
+        if(connect(s, (struct sockaddr *)&server_addr, sizeof(server_addr)) < 0)
+        {//서버로 연결요청
+                printf("can't connect.\n");
+                exit(0);
+        }
+ 
+        while((n = read(s, buf, BUF_LEN)) > 0)
+        {//서버가 보내오는 daytime 데이터의 수신
+                buf[n] = NULL;
+                printf("%s", buf);
+        }
+ 
+        close(s);
+        //사용이 완료된 소켓을 닫기
 }
