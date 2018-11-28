@@ -8,6 +8,7 @@ Dialog::Dialog(QWidget *parent) :
     ui(new Ui::Dialog)
 {
     ui->setupUi(this);
+    ui->lcdNumber_3->display(PLAYER_COIN_1);
 
 
 }
