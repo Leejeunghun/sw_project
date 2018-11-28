@@ -29,3 +29,5 @@ make brach to Leejeunghun
 
 
 I made it to make a mistake when I recover.
+and update error 
+![screeshot_2](./GUI_image_error_betting.PNG)
