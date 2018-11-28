@@ -21,7 +21,7 @@ push down is down betting coin
 push commit make oppent card
 ps) IT IS NOT COMPLETE 
 ![screenshot_total_coin](./IMG/GUI_upload_totalcoin.PNG)
-=======
+************************************************************
 push raise is up betting coin.
 
 push down is down betting coin.
@@ -29,7 +29,7 @@ push down is down betting coin.
 push commit make oppent card.
 
 ps) IT IS NOT COMPLETE .
->>>>>>> e2cc3c383bb74ec68b17f0622de1cc3f06a15899
+
 
 ***********************************************************
 1128
