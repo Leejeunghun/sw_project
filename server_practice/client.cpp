@@ -1,4 +1,4 @@
-*
+/*
 daytime 클라이언트 프로그램이 실행되기 위해서는
 서버쪽에서 xinetd의 daytime이 구동하고 있어야한다.
 coder YoWu
