@@ -31,6 +31,7 @@ public:
     QLCDNumber *lcdNumber_1;
     QLCDNumber *lcdNumber_2;
     QLabel *label;
+    QLCDNumber *lcdNumber_3;
 
     void setupUi(QDialog *Dialog)
     {
@@ -69,6 +70,9 @@ public:
         label = new QLabel(Dialog);
         label->setObjectName(QStringLiteral("label"));
         label->setGeometry(QRect(56, 0, 411, 121));
+        lcdNumber_3 = new QLCDNumber(Dialog);
+        lcdNumber_3->setObjectName(QStringLiteral("lcdNumber_3"));
+        lcdNumber_3->setGeometry(QRect(390, 60, 64, 23));
 
         retranslateUi(Dialog);
 
