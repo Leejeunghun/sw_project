@@ -33,7 +33,7 @@ private slots:
 
     void on_pushButton_commit_clicked();
 
-    void on_pushButton_4_clicked();
+    void on_pushButton_Random();
 
 private:
     Ui::Dialog *ui;

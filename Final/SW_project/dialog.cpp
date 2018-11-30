@@ -45,7 +45,7 @@ void Dialog::on_pushButton_Down_clicked()
 
 void Dialog::on_pushButton_commit_clicked()
 {
-    string filePath = "nfsroot/betting.txt";
+    string filePath = "betting.txt";
     // write File
         ofstream writeFile(filePath.data());
         if( writeFile.is_open() ){
@@ -55,7 +55,7 @@ void Dialog::on_pushButton_commit_clicked()
 
 }
 
-void Dialog::on_pushButton_4_clicked()
+void Dialog::on_pushButton_Random()
 {
     int k=0;
     k=rand()%10+1;
