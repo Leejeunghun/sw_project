@@ -43,4 +43,4 @@ and update error
 and I add Total coin LCD
 
 
-![screeshot_2](./IMG/GUI_image_error_betting.PNG)
+![screeshot_2](./IMG/GUI_upload_totalcoin.PNG)
