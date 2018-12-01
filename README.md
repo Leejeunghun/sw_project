@@ -44,3 +44,6 @@ and I add Total coin LCD
 
 
 ![screeshot_2](./IMG/GUI_upload_totalcoin.PNG)
+**************************************************8
+1201 add Image 
+![GUI1201](./IMG/1201_GUI.PNG)
