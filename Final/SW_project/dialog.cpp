@@ -2,7 +2,7 @@
 #include "ui_dialog.h"
 #include <stdlib.h>
 #include <cstdlib>
-int t=0;
+int betting_1=1;
 int PLAYER_COIN_1=20;
 Dialog::Dialog(QWidget *parent) :
     QDialog(parent),
@@ -10,6 +10,8 @@ Dialog::Dialog(QWidget *parent) :
 {
     ui->setupUi(this);
     ui->lcdNumber_coin->display(PLAYER_COIN_1);
+    ui->lcdNumber_bet->display(betting_1);
+
 }
 
 Dialog::~Dialog()
@@ -19,30 +21,30 @@ Dialog::~Dialog()
 
 void Dialog::on_pushButton_Raise_clicked()
 {
-    if(PLAYER_COIN_1 >t)
+    if(PLAYER_COIN_1 >betting_1)
     {
-       t=t+1;
+       betting_1=betting_1+1;
     }
     else
     {
-        QMessageBox::information(this,"Error","NO COIN to BET","OK");
+        QMessageBox::information(this,"Error","NO COIN TO BET","OK");
         return;
     }
-   ui->lcdNumber_bet->display(t);
+   ui->lcdNumber_bet->display(betting_1);
 }
 
 void Dialog::on_pushButton_Down_clicked()
 {
-    if(t >0)  //not using  //change
+    if(betting_1 >1)  //not using  //change
     {
-       t=t-1;
+       betting_1=betting_1-1;
     }
     else
     {
-        QMessageBox::information(this,"Error","DO not betting minus","OK");
+        QMessageBox::information(this,"Error","Do not betting 0","OK");
         return;
     }
-   ui->lcdNumber_bet->display(t);
+   ui->lcdNumber_bet->display(betting_1);
 }
 
 void Dialog::on_pushButton_commit_clicked()
@@ -51,7 +53,7 @@ void Dialog::on_pushButton_commit_clicked()
     // write File
         ofstream writeFile(filePath.data());
         if( writeFile.is_open() ){
-            writeFile <<t<<endl;
+            writeFile <<betting_1<<endl;
             writeFile.close();
     }
 
@@ -61,17 +63,27 @@ void Dialog::on_pushButton_commit_clicked()
 
 void Dialog::on_pushButton_Random_clicked()
 {
-    int k=0;
-    k=rand()%10+1;
+    int player_1_card=0;
+    int player_2_card=0;
+    player_1_card=rand()%10+1;
+    player_2_card=rand()%10+1;
     //read file
     string filePath = "oppent.txt";
     // write File
         ofstream writeFile(filePath.data());
         if( writeFile.is_open() ){
-            writeFile <<k<<endl;
+            writeFile <<player_1_card<<endl;
             writeFile.close();
     }
-   ui->lcdNumber_random->display(k);
+
+    string filePath_2 = "oppent_2.txt";
+        // write File
+          ofstream writeFile_2(filePath.data());
+          if( writeFile.is_open() ){
+              writeFile <<player_2_card<<endl;
+              writeFile.close();
+      }
+   ui->lcdNumber_random->display(player_1_card);
 }
 
 
