@@ -13,12 +13,15 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
+  <property name="sizeGripEnabled">
+   <bool>true</bool>
+  </property>
   <widget class="QWidget" name="gridLayoutWidget">
    <property name="geometry">
     <rect>
-     <x>10</x>
-     <y>200</y>
-     <width>221</width>
+     <x>0</x>
+     <y>230</y>
+     <width>254</width>
      <height>121</height>
     </rect>
    </property>
@@ -63,18 +66,18 @@
   <widget class="QLCDNumber" name="lcdNumber_bet">
    <property name="geometry">
     <rect>
-     <x>110</x>
-     <y>100</y>
-     <width>41</width>
-     <height>71</height>
+     <x>0</x>
+     <y>130</y>
+     <width>171</width>
+     <height>101</height>
     </rect>
    </property>
   </widget>
   <widget class="QLCDNumber" name="lcdNumber_coin">
    <property name="geometry">
     <rect>
-     <x>320</x>
-     <y>20</y>
+     <x>340</x>
+     <y>30</y>
      <width>111</width>
      <height>31</height>
     </rect>
@@ -83,21 +86,40 @@
   <widget class="QLCDNumber" name="lcdNumber_random">
    <property name="geometry">
     <rect>
-     <x>260</x>
-     <y>102</y>
-     <width>41</width>
-     <height>71</height>
+     <x>280</x>
+     <y>130</y>
+     <width>141</width>
+     <height>91</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>24</pointsize>
+    </font>
+   </property>
+   <property name="cursor">
+    <cursorShape>SizeHorCursor</cursorShape>
+   </property>
+   <property name="contextMenuPolicy">
+    <enum>Qt::DefaultContextMenu</enum>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::NoFrame</enum>
    </property>
   </widget>
   <widget class="QLabel" name="label_beting">
    <property name="geometry">
     <rect>
-     <x>50</x>
-     <y>60</y>
-     <width>101</width>
-     <height>31</height>
+     <x>0</x>
+     <y>70</y>
+     <width>191</width>
+     <height>71</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>23</pointsize>
+    </font>
    </property>
    <property name="text">
     <string>Betting coin</string>
@@ -106,11 +128,16 @@
   <widget class="QLabel" name="label_OppentCard">
    <property name="geometry">
     <rect>
-     <x>210</x>
-     <y>50</y>
-     <width>111</width>
+     <x>320</x>
+     <y>90</y>
+     <width>151</width>
      <height>31</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>18</pointsize>
+    </font>
    </property>
    <property name="text">
     <string>Oppent Card</string>
@@ -119,11 +146,16 @@
   <widget class="QLabel" name="label_Coin">
    <property name="geometry">
     <rect>
-     <x>336</x>
+     <x>330</x>
      <y>0</y>
-     <width>101</width>
-     <height>21</height>
+     <width>151</width>
+     <height>41</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>23</pointsize>
+    </font>
    </property>
    <property name="text">
     <string>Your coin</string>
@@ -132,8 +164,8 @@
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>200</x>
-     <y>60</y>
+     <x>310</x>
+     <y>110</y>
      <width>181</width>
      <height>261</height>
     </rect>
@@ -145,14 +177,31 @@
     <pixmap resource="mypro.qrc">:/new/prefix1/player.PNG</pixmap>
    </property>
   </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>241</width>
+     <height>71</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="mypro.qrc">:/new/prefix1/title.PNG</pixmap>
+   </property>
+  </widget>
   <zorder>label</zorder>
   <zorder>gridLayoutWidget</zorder>
   <zorder>lcdNumber_bet</zorder>
   <zorder>lcdNumber_coin</zorder>
-  <zorder>lcdNumber_random</zorder>
   <zorder>label_beting</zorder>
   <zorder>label_OppentCard</zorder>
   <zorder>label_Coin</zorder>
+  <zorder>label_2</zorder>
+  <zorder>lcdNumber_random</zorder>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources>
