@@ -22,3 +22,4 @@ Server쪽
 Client 
 1. mount할 폴더 생성(mkdir 폴더)
 2. sudo mount 서버IP:/공유한 폴더 /마운트할 폴더
+3. 폴더를 설정해서 betting.txt를 공유할 폴더를 만
