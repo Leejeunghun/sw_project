@@ -49,3 +49,11 @@ and I add Total coin LCD
 
 1201 add Image 
 ![GUI1201](./IMG/1201_GUI.PNG)
+
+
+**
+update UI and 1204 betting system
+
+
+![GUI1204](./IMG/1204_GUI.PNG)
+
