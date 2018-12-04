@@ -184,6 +184,16 @@
     <string>play</string>
    </property>
   </widget>
+  <widget class="QLCDNumber" name="lcdNumber">
+   <property name="geometry">
+    <rect>
+     <x>140</x>
+     <y>120</y>
+     <width>64</width>
+     <height>23</height>
+    </rect>
+   </property>
+  </widget>
   <zorder>label_4</zorder>
   <zorder>gridLayoutWidget</zorder>
   <zorder>lcdNumber_bet</zorder>
@@ -194,6 +204,7 @@
   <zorder>label_3</zorder>
   <zorder>lcdNumber_gamecount</zorder>
   <zorder>label_5</zorder>
+  <zorder>lcdNumber</zorder>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources>

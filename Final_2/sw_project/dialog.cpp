@@ -13,7 +13,8 @@ Dialog::Dialog(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Dialog)
 {
-    srand(5);
+
+    srand(10);
     ui->setupUi(this);
     ui->lcdNumber_coin->display(PLAYER_COIN_1);
     ui->lcdNumber_bet->display(betting_1);
@@ -120,6 +121,7 @@ void Dialog::on_pushButton_Random_clicked()
               writeFile_2 <<player_2_card[random_count]<<endl;
               writeFile_2.close();
       }
+   ui->lcdNumber->display(player_2_card[random_count]);
    ui->lcdNumber_random->display(player_1_card[random_count]);
    if(random_count<10)
    {
@@ -155,21 +157,26 @@ void Dialog::on_pushButton_Bet_clicked()
     if(player1<player2)
     {
          PLAYER_COIN_1 =PLAYER_COIN_1+(betting_1*2);
-         PLAYER_COIN_2 =PLAYER_COIN_2-(betting_1);
+         PLAYER_COIN_2 =PLAYER_COIN_2;
          ui->lcdNumber_coin->display(PLAYER_COIN_1);
          ui->lcdNumber_bet->display(betting_1);
+         QMessageBox::information(this,"GAME RESULT","WIN","OK");
     }
     else if(player1>player2)
     {
-        PLAYER_COIN_1 =PLAYER_COIN_1-(betting_1);
+        PLAYER_COIN_1 =PLAYER_COIN_1;
         PLAYER_COIN_2 =PLAYER_COIN_2+(betting_1*2);
         ui->lcdNumber_coin->display(PLAYER_COIN_1);
         ui->lcdNumber_bet->display(betting_1);
+       QMessageBox::information(this,"GAME RESULT","LOSE","OK");
     }
     else
     {
+        PLAYER_COIN_1 =PLAYER_COIN_1+(betting_1);
+        PLAYER_COIN_2 =PLAYER_COIN_2+(betting_1);
         ui->lcdNumber_coin->display(PLAYER_COIN_1);
         ui->lcdNumber_bet->display(betting_1);
+       QMessageBox::information(this,"GAME RESULT","DRAW","OK");
     }
 
 }
