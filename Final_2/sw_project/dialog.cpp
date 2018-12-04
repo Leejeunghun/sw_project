@@ -2,16 +2,53 @@
 #include "ui_dialog.h"
 #include <stdlib.h>
 #include <cstdlib>
+
 int betting_1=1;
 int PLAYER_COIN_1=20;
 int PLAYER_COIN_2=20;
+int random_count=0;
+int player_1_card[10]={};
+int player_2_card[10]={};
 Dialog::Dialog(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Dialog)
 {
+    srand(5);
     ui->setupUi(this);
     ui->lcdNumber_coin->display(PLAYER_COIN_1);
     ui->lcdNumber_bet->display(betting_1);
+// random array
+
+    for(int i=1;i<10;i++)
+   {
+      player_1_card[i]=i;
+   }
+   for(int i=0;i<50;i++)
+   {
+     int s1=rand()%10;
+     int s2=rand()%10;
+
+     int temp=player_1_card[s1];
+     player_1_card[s1]=player_1_card[s2];
+     player_1_card[s2]=temp;
+
+   }
+
+
+  for(int i=1;i<10;i++)
+  {
+     player_2_card[i]=i;
+  }
+  for(int i=0;i<50;i++)
+  {
+    int s1=rand()%10;
+    int s2=rand()%10;
+
+    int temp=player_2_card[s1];
+    player_2_card[s1]=player_2_card[s2];
+    player_2_card[s2]=temp;
+
+  }
 }
 
 Dialog::~Dialog()
@@ -63,28 +100,33 @@ void Dialog::on_pushButton_commit_clicked()
 
 void Dialog::on_pushButton_Random_clicked()
 {
-    int player_1_card=0;
-    int player_2_card=0;
-    player_1_card=rand()%10+1;
-    player_2_card=rand()%10+1;
+    if(random_count==10)
+    {
+        QMessageBox::information(this,"Game end","Game end","OK");
+    }
+    ui->lcdNumber_gamecount->display( random_count+1);
     //read file
     string filePath_1 = "oppent.txt";
     // write File
        ofstream writeFile(filePath_1.data());
     if( writeFile.is_open() ){
-        writeFile <<player_1_card<<endl;
+        writeFile <<player_1_card[random_count]<<endl;
         writeFile.close();
      }
     string filePath_2 = "oppent_2.txt";
         // write File
           ofstream writeFile_2(filePath_2.data());
           if( writeFile_2.is_open() ){
-              writeFile_2 <<player_2_card<<endl;
+              writeFile_2 <<player_2_card[random_count]<<endl;
               writeFile_2.close();
       }
-   ui->lcdNumber_random->display(player_1_card);
-}
+   ui->lcdNumber_random->display(player_1_card[random_count]);
+   if(random_count<10)
+   {
+     random_count++;
 
+   }
+}
 
 void Dialog::on_pushButton_Bet_clicked()
 {
@@ -110,16 +152,16 @@ void Dialog::on_pushButton_Bet_clicked()
         }
         openFile_2.close();
     }
-    if(player1>player2)
+    if(player1<player2)
     {
          PLAYER_COIN_1 =PLAYER_COIN_1+(betting_1*2);
-         PLAYER_COIN_2 =PLAYER_COIN_2-(betting_1*2);
+         PLAYER_COIN_2 =PLAYER_COIN_2-(betting_1);
          ui->lcdNumber_coin->display(PLAYER_COIN_1);
          ui->lcdNumber_bet->display(betting_1);
     }
-    else if(player1<player2)
+    else if(player1>player2)
     {
-        PLAYER_COIN_1 =PLAYER_COIN_1-(betting_1*2);
+        PLAYER_COIN_1 =PLAYER_COIN_1-(betting_1);
         PLAYER_COIN_2 =PLAYER_COIN_2+(betting_1*2);
         ui->lcdNumber_coin->display(PLAYER_COIN_1);
         ui->lcdNumber_bet->display(betting_1);

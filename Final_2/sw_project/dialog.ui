@@ -142,7 +142,7 @@
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap resource="../../sw_project/IMG/myimg.qrc">:/new/prefix1/title.PNG</pixmap>
+    <pixmap resource="../../IMG/myimg.qrc">:/new/prefix1/title.PNG</pixmap>
    </property>
   </widget>
   <widget class="QLabel" name="label_4">
@@ -158,7 +158,30 @@
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap resource="../../sw_project/IMG/myimg.qrc">:/new/prefix1/player.PNG</pixmap>
+    <pixmap resource="../../IMG/myimg.qrc">:/new/prefix1/player.PNG</pixmap>
+   </property>
+  </widget>
+  <widget class="QLCDNumber" name="lcdNumber_gamecount">
+   <property name="geometry">
+    <rect>
+     <x>220</x>
+     <y>30</y>
+     <width>71</width>
+     <height>31</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_5">
+   <property name="geometry">
+    <rect>
+     <x>230</x>
+     <y>10</y>
+     <width>67</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>play</string>
    </property>
   </widget>
   <zorder>label_4</zorder>
@@ -169,10 +192,12 @@
   <zorder>label</zorder>
   <zorder>label_2</zorder>
   <zorder>label_3</zorder>
+  <zorder>lcdNumber_gamecount</zorder>
+  <zorder>label_5</zorder>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources>
-  <include location="../../sw_project/IMG/myimg.qrc"/>
+  <include location="../../IMG/myimg.qrc"/>
  </resources>
  <connections/>
 </ui>

@@ -40,4 +40,5 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 RESOURCES += \
+    ../../sw_project/IMG/myimg.qrc \
     ../../sw_project/IMG/myimg.qrc
