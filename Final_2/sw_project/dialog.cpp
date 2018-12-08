@@ -259,7 +259,7 @@ void Dialog::on_pushButton_clicked()
 {
     int betting_1;
     int betting_2;
-    int oppent_1;
+    int oppent_2;
    if(player==2)
    {
        string filePath_1 = "nfsroot/betting_1.txt";
@@ -273,22 +273,19 @@ void Dialog::on_pushButton_clicked()
            }
            openFile_1.close();
        }
-       string filePath_3 = "nfsroot/oppent_1.txt";
+       string filePath_3 = "nfsroot/oppent_2.txt";
        ifstream openFile_3(filePath_3.data());
-       if( openFile_3.is_open() )
+       if(openFile_3.is_open() )
        {
            string line;
            while(getline(openFile_3, line))
            {
-              oppent_1=std::stoi(line );
+              oppent_2=std::stoi(line );
            }
            openFile_3.close();
        }
-
-
-
    ui->lcdNumber_player->display(betting_1);
-   ui->lcdNumber_random->display(oppent_1);
+   ui->lcdNumber_random->display(oppent_2);
    }
 
    else if(player==1)
