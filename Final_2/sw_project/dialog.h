@@ -38,6 +38,12 @@ private slots:
 
     void on_pushButton_Bet_clicked();
 
+    void on_pushButton_player_clicked();
+
+    void on_checkBox_2_stateChanged(int arg1);
+
+    void on_pushButton_clicked();
+
 private:
     Ui::Dialog *ui;
 };

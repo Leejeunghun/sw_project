@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/new/prefix1">
+        <file>title.PNG</file>
+        <file>player.PNG</file>
+    </qresource>
+</RCC>
