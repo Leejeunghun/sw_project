@@ -159,7 +159,7 @@ void Dialog::on_pushButton_Random_clicked()
       }
       ui->lcdNumber_gamecount->display( random_count+1);
       //read file
-      string filePath_1 = "nfsroot/oppent.txt";
+      string filePath_1 = "nfsroot/oppent_1.txt";
       // write File
          ofstream writeFile(filePath_1.data());
       if( writeFile.is_open() ){
@@ -239,10 +239,7 @@ void Dialog::on_pushButton_Bet_clicked()
 
 }
 
-void Dialog::on_pushButton_player_clicked()
-{
 
-}
 
 void Dialog::on_checkBox_2_stateChanged(int arg1)
 {
