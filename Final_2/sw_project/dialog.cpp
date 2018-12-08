@@ -151,12 +151,13 @@ void Dialog::on_pushButton_commit_clicked()
 
 void Dialog::on_pushButton_Random_clicked()
 {
-    if(player=1)
+    if(player==1)
     {
       if(random_count==10)
       {
           QMessageBox::information(this,"Game end","Game end","OK");
       }
+
       ui->lcdNumber_gamecount->display( random_count+1);
       //read file
       string filePath_1 = "nfsroot/oppent_1.txt";
@@ -258,7 +259,7 @@ void Dialog::on_pushButton_clicked()
 {
     int betting_1;
     int betting_2;
-   if(player==1)
+   if(player==2)
    {
        string filePath_1 = "nfsroot/betting_1.txt";
        ifstream openFile(filePath_1.data());
@@ -269,8 +270,10 @@ void Dialog::on_pushButton_clicked()
            }
            openFile.close();
        }
+   ui->lcdNumber_player->display(betting_1);
    }
-   else if(player==2)
+
+   else if(player==1)
    {
        string filePath_2 = "nfsroot/betting_2.txt";
        ifstream openFile(filePath_2.data());
@@ -281,5 +284,6 @@ void Dialog::on_pushButton_clicked()
            }
            openFile.close();
        }
+          ui->lcdNumber_player->display(betting_2);
    }
 }
