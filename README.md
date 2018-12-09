@@ -2,6 +2,8 @@
 sw project_ to college class
 
 ************************************************************
+
+
 Indian Porker history
 
 jeunghunLee study QT GUI
@@ -13,6 +15,8 @@ We make simple up down buttoon and display.
 ![indianPoker](./IMG/indianPoker.jpg)
 
 *************************************************************
+
+
 ![screenshot](./IMG/1127_GUI.PNG)
 
 <<<<<<< HEAD
@@ -76,3 +80,14 @@ Server
 Client 
 1. mount할 폴더 생성(mkdir 폴더)
 2. sudo mount 서버IP:/공유한 폴더 /마운트할 폴더
+
+
+**
+
+2018/12/09
+
+add Player choose 
+add die
+update GUI
+
+![GUI1209](./IMG/Final_GUI.PNG)
