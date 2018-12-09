@@ -24,8 +24,13 @@ push raise is up betting coin
 push down is down betting coin
 push commit make oppent card
 ps) IT IS NOT COMPLETE 
+
+
 ![screenshot_total_coin](./IMG/GUI_upload_totalcoin.PNG)
+
+
 ************************************************************
+
 push raise is up betting coin.
 
 push down is down betting coin.
@@ -43,7 +48,11 @@ make brach to Leejeunghun
 
 I made it to make a mistake when I recover.
 and update error 
+
+
 ![screeshot_2](./IMG/GUI_image_error_betting.PNG)
+
+
 and I add Total coin LCD
 
 
@@ -52,6 +61,7 @@ and I add Total coin LCD
 *************
 
 1201 add Image 
+
 ![GUI1201](./IMG/1201_GUI.PNG)
 
 
