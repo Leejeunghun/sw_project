@@ -32,6 +32,7 @@ public:
     QPushButton *pushButton_Random;
     QPushButton *pushButton_Bet;
     QPushButton *pushButton;
+    QPushButton *pushButton_2;
     QLCDNumber *lcdNumber_bet;
     QLCDNumber *lcdNumber_random;
     QLCDNumber *lcdNumber_coin;
@@ -43,6 +44,7 @@ public:
     QLabel *label_4;
     QCheckBox *checkBox_2;
     QLCDNumber *lcdNumber_player;
+    QLabel *label_6;
 
     void setupUi(QDialog *Dialog)
     {
@@ -51,7 +53,7 @@ public:
         Dialog->resize(636, 432);
         gridLayoutWidget = new QWidget(Dialog);
         gridLayoutWidget->setObjectName(QStringLiteral("gridLayoutWidget"));
-        gridLayoutWidget->setGeometry(QRect(0, 340, 292, 87));
+        gridLayoutWidget->setGeometry(QRect(0, 340, 360, 87));
         gridLayout = new QGridLayout(gridLayoutWidget);
         gridLayout->setSpacing(6);
         gridLayout->setContentsMargins(11, 11, 11, 11);
@@ -86,6 +88,11 @@ public:
         pushButton->setObjectName(QStringLiteral("pushButton"));
 
         gridLayout->addWidget(pushButton, 1, 2, 1, 1);
+
+        pushButton_2 = new QPushButton(gridLayoutWidget);
+        pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
+
+        gridLayout->addWidget(pushButton_2, 0, 3, 1, 1);
 
         lcdNumber_bet = new QLCDNumber(Dialog);
         lcdNumber_bet->setObjectName(QStringLiteral("lcdNumber_bet"));
@@ -129,6 +136,12 @@ public:
         lcdNumber_player = new QLCDNumber(Dialog);
         lcdNumber_player->setObjectName(QStringLiteral("lcdNumber_player"));
         lcdNumber_player->setGeometry(QRect(270, 170, 181, 111));
+        label_6 = new QLabel(Dialog);
+        label_6->setObjectName(QStringLiteral("label_6"));
+        label_6->setGeometry(QRect(276, 140, 121, 31));
+        QFont font2;
+        font2.setPointSize(15);
+        label_6->setFont(font2);
         label_4->raise();
         gridLayoutWidget->raise();
         lcdNumber_bet->raise();
@@ -141,6 +154,7 @@ public:
         label_3->raise();
         checkBox_2->raise();
         lcdNumber_player->raise();
+        label_6->raise();
 
         retranslateUi(Dialog);
 
@@ -155,13 +169,15 @@ public:
         pushButton_Down->setText(QApplication::translate("Dialog", "Down", nullptr));
         pushButton_Random->setText(QApplication::translate("Dialog", "Random", nullptr));
         pushButton_Bet->setText(QApplication::translate("Dialog", "Bet", nullptr));
-        pushButton->setText(QApplication::translate("Dialog", "Oppent_betting", nullptr));
+        pushButton->setText(QApplication::translate("Dialog", "LCD_display", nullptr));
+        pushButton_2->setText(QApplication::translate("Dialog", "Die", nullptr));
         label->setText(QApplication::translate("Dialog", "BET coin", nullptr));
         label_2->setText(QApplication::translate("Dialog", "Total coin", nullptr));
         label_5->setText(QApplication::translate("Dialog", "play", nullptr));
         label_3->setText(QString());
         label_4->setText(QString());
         checkBox_2->setText(QApplication::translate("Dialog", "PLayer_check", nullptr));
+        label_6->setText(QApplication::translate("Dialog", "OPPENT BET", nullptr));
     } // retranslateUi
 
 };
