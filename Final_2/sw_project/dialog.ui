@@ -18,7 +18,7 @@
     <rect>
      <x>0</x>
      <y>340</y>
-     <width>292</width>
+     <width>360</width>
      <height>87</height>
     </rect>
    </property>
@@ -61,7 +61,14 @@
     <item row="1" column="2">
      <widget class="QPushButton" name="pushButton">
       <property name="text">
-       <string>Oppent_betting</string>
+       <string>LCD_display</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="3">
+     <widget class="QPushButton" name="pushButton_2">
+      <property name="text">
+       <string>Die</string>
       </property>
      </widget>
     </item>
