@@ -101,3 +101,12 @@ add die
 update GUI
 
 ![GUI1209](./IMG/Final_GUI.PNG)
+
+
+
+Emergency check
+
+add Label 
+
+![GUI1209_2](./IMG/Final_Final_GUI.PNG)
+
