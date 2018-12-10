@@ -35,7 +35,7 @@ MOVE          = mv -f
 TAR           = tar -cf
 COMPRESS      = gzip -9f
 DISTNAME      = sw_project1.0.0
-DISTDIR = /home/lee/Desktop/recur/retry/sw_project/Final_2/build_2/.tmp/sw_project1.0.0
+DISTDIR = /home/lee/Desktop/C/sw_project/Final_2/build_2/.tmp/sw_project1.0.0
 LINK          = g++
 LFLAGS        = -Wl,-rpath,/home/lee/Qt/5.11.2/gcc_64/lib
 LIBS          = $(SUBLIBS) -L/home/lee/Qt/5.11.2/gcc_64/lib -lQt5Widgets -lQt5Gui -lQt5Core -lGL -lpthread 
@@ -228,6 +228,7 @@ DIST          = /home/lee/Qt/5.11.2/gcc_64/mkspecs/features/spec_pre.prf \
 		/home/lee/Qt/5.11.2/gcc_64/mkspecs/features/qt_config.prf \
 		/home/lee/Qt/5.11.2/gcc_64/mkspecs/linux-g++/qmake.conf \
 		/home/lee/Qt/5.11.2/gcc_64/mkspecs/features/spec_post.prf \
+		../sw_project/.qmake.stash \
 		/home/lee/Qt/5.11.2/gcc_64/mkspecs/features/exclusive_builds.prf \
 		/home/lee/Qt/5.11.2/gcc_64/mkspecs/features/toolchain.prf \
 		/home/lee/Qt/5.11.2/gcc_64/mkspecs/features/default_pre.prf \
@@ -429,6 +430,7 @@ Makefile: ../sw_project/sw_project.pro /home/lee/Qt/5.11.2/gcc_64/mkspecs/linux-
 		/home/lee/Qt/5.11.2/gcc_64/mkspecs/features/qt_config.prf \
 		/home/lee/Qt/5.11.2/gcc_64/mkspecs/linux-g++/qmake.conf \
 		/home/lee/Qt/5.11.2/gcc_64/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		/home/lee/Qt/5.11.2/gcc_64/mkspecs/features/exclusive_builds.prf \
 		/home/lee/Qt/5.11.2/gcc_64/mkspecs/features/toolchain.prf \
 		/home/lee/Qt/5.11.2/gcc_64/mkspecs/features/default_pre.prf \
@@ -624,6 +626,7 @@ Makefile: ../sw_project/sw_project.pro /home/lee/Qt/5.11.2/gcc_64/mkspecs/linux-
 /home/lee/Qt/5.11.2/gcc_64/mkspecs/features/qt_config.prf:
 /home/lee/Qt/5.11.2/gcc_64/mkspecs/linux-g++/qmake.conf:
 /home/lee/Qt/5.11.2/gcc_64/mkspecs/features/spec_post.prf:
+.qmake.stash:
 /home/lee/Qt/5.11.2/gcc_64/mkspecs/features/exclusive_builds.prf:
 /home/lee/Qt/5.11.2/gcc_64/mkspecs/features/toolchain.prf:
 /home/lee/Qt/5.11.2/gcc_64/mkspecs/features/default_pre.prf:
@@ -838,7 +841,7 @@ moc_dialog.cpp: /home/lee/Qt/5.11.2/gcc_64/include/QtWidgets/QDialog \
 		../sw_project/dialog.h \
 		moc_predefs.h \
 		/home/lee/Qt/5.11.2/gcc_64/bin/moc
-	/home/lee/Qt/5.11.2/gcc_64/bin/moc $(DEFINES) --include /home/lee/Desktop/recur/retry/sw_project/Final_2/build_2/moc_predefs.h -I/home/lee/Qt/5.11.2/gcc_64/mkspecs/linux-g++ -I/home/lee/Desktop/recur/retry/sw_project/Final_2/sw_project -I/home/lee/Qt/5.11.2/gcc_64/include -I/home/lee/Qt/5.11.2/gcc_64/include/QtWidgets -I/home/lee/Qt/5.11.2/gcc_64/include/QtGui -I/home/lee/Qt/5.11.2/gcc_64/include/QtCore -I. -I/usr/include/c++/5 -I/usr/include/x86_64-linux-gnu/c++/5 -I/usr/include/c++/5/backward -I/usr/lib/gcc/x86_64-linux-gnu/5/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../sw_project/dialog.h -o moc_dialog.cpp
+	/home/lee/Qt/5.11.2/gcc_64/bin/moc $(DEFINES) --include /home/lee/Desktop/C/sw_project/Final_2/build_2/moc_predefs.h -I/home/lee/Qt/5.11.2/gcc_64/mkspecs/linux-g++ -I/home/lee/Desktop/C/sw_project/Final_2/sw_project -I/home/lee/Qt/5.11.2/gcc_64/include -I/home/lee/Qt/5.11.2/gcc_64/include/QtWidgets -I/home/lee/Qt/5.11.2/gcc_64/include/QtGui -I/home/lee/Qt/5.11.2/gcc_64/include/QtCore -I. -I/usr/include/c++/5 -I/usr/include/x86_64-linux-gnu/c++/5 -I/usr/include/c++/5/backward -I/usr/lib/gcc/x86_64-linux-gnu/5/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../sw_project/dialog.h -o moc_dialog.cpp
 
 compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
@@ -1109,7 +1112,21 @@ dialog.o: ../sw_project/dialog.cpp ../sw_project/dialog.h \
 		/home/lee/Qt/5.11.2/gcc_64/include/QtCore/QTextStream \
 		/home/lee/Qt/5.11.2/gcc_64/include/QtWidgets/QMessageBox \
 		/home/lee/Qt/5.11.2/gcc_64/include/QtWidgets/qmessagebox.h \
-		ui_dialog.h
+		ui_dialog.h \
+		/home/lee/Qt/5.11.2/gcc_64/include/QtCore/QVariant \
+		/home/lee/Qt/5.11.2/gcc_64/include/QtWidgets/QCheckBox \
+		/home/lee/Qt/5.11.2/gcc_64/include/QtWidgets/qcheckbox.h \
+		/home/lee/Qt/5.11.2/gcc_64/include/QtWidgets/QGridLayout \
+		/home/lee/Qt/5.11.2/gcc_64/include/QtWidgets/qgridlayout.h \
+		/home/lee/Qt/5.11.2/gcc_64/include/QtWidgets/qlayout.h \
+		/home/lee/Qt/5.11.2/gcc_64/include/QtWidgets/qlayoutitem.h \
+		/home/lee/Qt/5.11.2/gcc_64/include/QtWidgets/qboxlayout.h \
+		/home/lee/Qt/5.11.2/gcc_64/include/QtWidgets/QLCDNumber \
+		/home/lee/Qt/5.11.2/gcc_64/include/QtWidgets/qlcdnumber.h \
+		/home/lee/Qt/5.11.2/gcc_64/include/QtWidgets/qframe.h \
+		/home/lee/Qt/5.11.2/gcc_64/include/QtWidgets/QLabel \
+		/home/lee/Qt/5.11.2/gcc_64/include/QtWidgets/qlabel.h \
+		/home/lee/Qt/5.11.2/gcc_64/include/QtWidgets/QWidget
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o dialog.o ../sw_project/dialog.cpp
 
 qrc_asd.o: qrc_asd.cpp 
