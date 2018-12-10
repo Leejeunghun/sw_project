@@ -1,4 +1,4 @@
-﻿#include "dialog.h"
+#include "dialog.h"
 #include "ui_dialog.h"
 #include <stdlib.h>
 #include <cstdlib>
@@ -165,7 +165,7 @@ void Dialog::on_pushButton_commit_clicked()
     }
 }
 
-void Dialog::on_pushButton_Random_clicked()
+void Dialog::on_pushButton_Random_clicked()  //"Random button"
 {
     if(player==1)
     {
@@ -200,7 +200,7 @@ void Dialog::on_pushButton_Random_clicked()
          }
    }
 }
-void Dialog::on_pushButton_Bet_clicked()
+void Dialog::on_pushButton_Bet_clicked()   //Campare each other's card and decide win, lose, or draw.
 {
     int player1_card=0;
     int player2_card=0;ui->lcdNumber_gamecount->display(random_count);
@@ -263,7 +263,7 @@ void Dialog::on_pushButton_Bet_clicked()
 
 
 
-void Dialog::on_checkBox_2_stateChanged(int arg1)
+void Dialog::on_checkBox_2_stateChanged(int arg1)    //Decide Player_1 or Player_2
 {
     //player check
     if(arg1==0)
@@ -278,7 +278,7 @@ void Dialog::on_checkBox_2_stateChanged(int arg1)
 }
 
 
-void Dialog::on_pushButton_clicked()
+void Dialog::on_pushButton_clicked()  //Display number of each elements.
 {
   int read_betting_1;
   int read_betting_2;
@@ -389,7 +389,7 @@ void Dialog::on_pushButton_clicked()
 
 }
 
-void Dialog::on_pushButton_2_clicked()
+void Dialog::on_pushButton_2_clicked()    //"Die" button
 {
     int read_betting_1;
     int read_betting_2;
