@@ -110,3 +110,13 @@ add Label
 
 ![GUI1209_2](./IMG/Final_Final_GUI.PNG)
 
+ *****************
+ Game play order
+ 1. 2player check 'Player_check'
+ 2. 1player click 'Random' button then start game_1
+ 3. 1player click 'LCD_display' then player can check opponent's card
+ 4. 'Raise' and 'Down' buttons can decide how much coins to bet.
+ 5. And 'Commit' button is show player's betting coins.
+ 6. If both sides coins are same, player1 can click 'Bet' button. And show who is the winner!
+ 7. If opponent's card is big, player can click 'Die'
+ 
