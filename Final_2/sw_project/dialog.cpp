@@ -1,4 +1,4 @@
-#include "dialog.h"
+﻿#include "dialog.h"
 #include "ui_dialog.h"
 #include <stdlib.h>
 #include <cstdlib>
@@ -57,6 +57,14 @@ Dialog::Dialog(QWidget *parent) :
       writeFile_1 <<PLAYER_COIN_1<<endl;
       writeFile_1.close();
    }
+  string filePath_2 = "nfsroot/total_2.txt";
+  // write File
+     ofstream writeFile_2(filePath_1.data());
+  if( writeFile_2.is_open() ){
+      writeFile_2 <<PLAYER_COIN_2<<endl;
+      writeFile_2.close();
+   }
+
 
 }
 
@@ -75,12 +83,12 @@ void Dialog::on_pushButton_Raise_clicked()  //"Raise button"
      }
      else
      {
-         QMessageBox::information(this,"Error","NO COIN TO BET","OK");  //Coin can't bet 0
+         QMessageBox::information(this,"Error","NO COIN TO BET","OK");
          return;
      }
       ui->lcdNumber_bet->display(betting_1);
     }
-    else if (player ==2)
+    else if (player ==2)     //player 2
     {
 
         if(PLAYER_COIN_2 >betting_2)
@@ -98,7 +106,7 @@ void Dialog::on_pushButton_Raise_clicked()  //"Raise button"
 
 }
 
-void Dialog::on_pushButton_Down_clicked()
+void Dialog::on_pushButton_Down_clicked()   //"Down button"
 {
     if(player==1)
     {
@@ -109,7 +117,7 @@ void Dialog::on_pushButton_Down_clicked()
      }
      else
      { ui->lcdNumber_gamecount->display(random_count);
-         QMessageBox::information(this,"Error","Do not betting 0","OK");
+         QMessageBox::information(this,"Error","Do not betting 0","OK");    //Coin can't bet 0
          return;
      }
      ui->lcdNumber_bet->display(betting_1);
@@ -141,7 +149,7 @@ void Dialog::on_pushButton_commit_clicked()
          if( writeFile.is_open() ){
              writeFile <<betting_1<<endl;
              writeFile.close();
-          } ui->lcdNumber_gamecount->display(random_count);
+          } //ui->lcdNumber_gamecount->display(random_count);
         ui->lcdNumber_bet->display(betting_1);
     }
     else if(player==2)
@@ -243,7 +251,6 @@ void Dialog::on_pushButton_Bet_clicked()
         writeFile_1 <<PLAYER_COIN_1<<endl;
         writeFile_1.close();
      }
-
     string filePath_4 = "nfsroot/total_2.txt";
     // write File
        ofstream writeFile_2(filePath_4.data());
@@ -377,7 +384,7 @@ void Dialog::on_pushButton_clicked()
       ui->lcdNumber_random->display(read_oppent_1);
       ui->lcdNumber_coin->display(read_total_2);
   }
-  ui->lcdNumber_gamecount->display(random_count);
+  ui->lcdNumber_gamecount->display(game_count);
 
 
 }
