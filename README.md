@@ -120,3 +120,7 @@ add Label
  6. If both sides coins are same, player1 can click 'Bet' button. And show who is the winner!
  7. If opponent's card is big, player can click 'Die'
  
+******************
+12/10 
+Final debugging and video recording.
+Make ppt_file of project. 
