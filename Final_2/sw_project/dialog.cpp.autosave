@@ -75,12 +75,12 @@ void Dialog::on_pushButton_Raise_clicked()  //"Raise button"
      }
      else
      {
-         QMessageBox::information(this,"Error","NO COIN TO BET","OK");  //Coin can't bet 0
+         QMessageBox::information(this,"Error","NO COIN TO BET","OK");   
          return;
      }
       ui->lcdNumber_bet->display(betting_1);
     }
-    else if (player ==2)
+    else if (player ==2)     //player 2
     {
 
         if(PLAYER_COIN_2 >betting_2)
@@ -98,7 +98,7 @@ void Dialog::on_pushButton_Raise_clicked()  //"Raise button"
 
 }
 
-void Dialog::on_pushButton_Down_clicked()
+void Dialog::on_pushButton_Down_clicked()   //"Down button"
 {
     if(player==1)
     {
@@ -109,7 +109,7 @@ void Dialog::on_pushButton_Down_clicked()
      }
      else
      { ui->lcdNumber_gamecount->display(random_count);
-         QMessageBox::information(this,"Error","Do not betting 0","OK");
+         QMessageBox::information(this,"Error","Do not betting 0","OK");    //Coin can't bet 0
          return;
      }
      ui->lcdNumber_bet->display(betting_1);
